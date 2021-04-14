@@ -18,6 +18,7 @@ int main() {
     Passenger p1;
     Driver d1;
     Gateway g = Gateway("users.json","orders.json","addresses.json","cars.json");
+    g.saveAll();
     //PassengerGateway pg1; //child of Gateway
     //DriverGateway dg1;
 

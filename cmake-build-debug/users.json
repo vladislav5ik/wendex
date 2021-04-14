@@ -1,27 +1,43 @@
 {
-	"passengersCount" : 1,
-	"passengers": [
-		{
-			"id": 0,
-			"name": "PName1",
-			"securityPin" : 1234,
-			"rating": 4.83,
-			"addressesIds": [1,2,3,4],
-			"pinnedAddressesIds" : [1,2],
-			"defaultPaymentMethod": "card",
-			"ordersIds" : [1,20,53]
-		}
-  ],
-	"driversCount" : 1,
-	"drivers" : [
-		{
-			"id": 0,
-			"name": "DName1",
-			"securityPin" : 1234,
-			"rating": 5,
-			"status" : "in ride",
-			"ordersIds" : [1,20,53],
-			"carId" : 1			
-		}
-  ]
+    "drivers": [
+        {
+            "carId": 1,
+            "id": 0,
+            "name": "DName1",
+            "ordersIds": [
+                1,
+                20,
+                53
+            ],
+            "rating": 5,
+            "securityPin": 1234,
+            "status": "in ride"
+        }
+    ],
+    "driversCount": 1,
+    "passengers": [
+        {
+            "addressesIds": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "defaultPaymentMethod": "card",
+            "id": 0,
+            "name": "PName1",
+            "ordersIds": [
+                1,
+                20,
+                53
+            ],
+            "pinnedAddressesIds": [
+                1,
+                2
+            ],
+            "rating": 4.83,
+            "securityPin": 1234
+        }
+    ],
+    "passengersCount": 1
 }

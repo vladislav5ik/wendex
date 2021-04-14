@@ -3,6 +3,7 @@
 //
 
 #include "Gateway.h"
+#include <iomanip>
 using namespace std;
 
 Gateway::Gateway(const string& fileNameUsers, const string& fileNameOrders,
@@ -60,16 +61,16 @@ Passenger Gateway::addPassenger(Passenger &passenger) {
 }
 
 void Gateway::saveAll() {
-    ofstream users_stream(jsonUsers);
-    users_stream << jsonUsers << std::endl;
+    ofstream users_stream(fileNameUsers);
+    users_stream << setw(4) << jsonUsers << std::endl;
 
-    ofstream addresses_stream(jsonAddresses);
-    addresses_stream << jsonAddresses << std::endl;
+    ofstream addresses_stream(fileNameAddresses);
+    addresses_stream << setw(4) << jsonAddresses << std::endl;
 
-    ofstream cars_stream(jsonCars);
-    cars_stream << jsonCars << std::endl;
+    ofstream cars_stream(fileNameCars);
+    cars_stream << setw(4) << jsonCars << std::endl;
 
-    ofstream orders_stream(jsonOrders);
-    orders_stream << jsonOrders << std::endl;
+    ofstream orders_stream(fileNameOrders);
+    orders_stream << setw(4) << jsonOrders << std::endl;
 }
 

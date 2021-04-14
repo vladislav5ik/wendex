@@ -20,6 +20,7 @@ class Gateway {
 public:
     Gateway(const string& fileNameUsers, const string& fileNameOrders,
             const string& fileNameAddresses, const string& fileNameCars);
+    void saveAll();
 private:
     string fileNameUsers, fileNameOrders, fileNameAddresses, fileNameCars;
     json jsonUsers, jsonOrders, jsonAddresses, jsonCars;
@@ -29,7 +30,6 @@ protected:
     Order addOrder(Order& order);
     Driver addDriver(Driver& driver);
     Passenger addPassenger(Passenger& passenger);
-    void saveAll();
 
     json getUser(int id);
     json getOrder(int id);
