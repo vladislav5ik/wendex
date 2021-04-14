@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="homework4"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="homework4">
+				<Option output="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/homework4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 homework4"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="homework4/fast">
+				<Option output="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/homework4.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 homework4/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Professional/CLionProjects/homework4/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Address.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Address.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Car.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Car.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Driver.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Driver.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/DriverGateway.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/DriverGateway.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Gateway.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Gateway.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Order.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Order.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Passenger.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/Passenger.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/PassengerGateway.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/main.cpp">
+			<Option target="homework4"/>
+		</Unit>
+		<Unit filename="C:/Users/Professional/CLionProjects/homework4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
