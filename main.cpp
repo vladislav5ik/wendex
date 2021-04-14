@@ -19,6 +19,10 @@ int main() {
     Driver d1;
     Gateway g = Gateway("users.json","orders.json","addresses.json","cars.json");
     g.saveAll();
+    cout << g.findAddress(0) << endl;
+    cout << g.findCar(0) << endl;
+    cout << g.findDriver(0) << endl;
+    cout << g.findPassenger(0) << endl;
     //PassengerGateway pg1; //child of Gateway
     //DriverGateway dg1;
 

@@ -74,3 +74,43 @@ void Gateway::saveAll() {
     orders_stream << setw(4) << jsonOrders << std::endl;
 }
 
+json Gateway::findPassenger(int id) {
+    return jsonUsers["passengers"][id];
+}
+
+json Gateway::findDriver(int id) {
+    return jsonUsers["drivers"][id];
+}
+
+json Gateway::findOrder(int id) {
+    return jsonOrders["orders"][id];
+}
+
+json Gateway::findAddress(int id) {
+    return jsonAddresses["addresses"][id];
+}
+
+json Gateway::findCar(int id) {
+    return jsonCars["cars"][id];
+}
+
+int Gateway::getPassengersCount() {
+    return jsonUsers["passengersCount"];
+}
+int Gateway::getDriversCount() {
+    return jsonUsers["driversCount"];
+}
+
+int Gateway::getAddressesCount() {
+    return jsonAddresses["addressesCount"];
+}
+
+int Gateway::getOrdersCount() {
+    return jsonOrders["ordersCount"];
+}
+
+int Gateway::getCarsCount() {
+    return jsonCars["carsCount"];
+}
+
+

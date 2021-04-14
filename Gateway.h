@@ -21,9 +21,20 @@ public:
     Gateway(const string& fileNameUsers, const string& fileNameOrders,
             const string& fileNameAddresses, const string& fileNameCars);
     void saveAll();
+    json findPassenger(int id);
+    json findDriver(int id);
+    json findOrder(int id);
+    json findAddress(int id);
+    json findCar(int id);
+    int getPassengersCount();
+    int getDriversCount();
+    int getOrdersCount();
+    int getAddressesCount();
+    int getCarsCount();
 private:
     string fileNameUsers, fileNameOrders, fileNameAddresses, fileNameCars;
     json jsonUsers, jsonOrders, jsonAddresses, jsonCars;
+
 protected:
     Car addCar(Car& car);
     Address addAddress(Address& address);
@@ -31,10 +42,7 @@ protected:
     Driver addDriver(Driver& driver);
     Passenger addPassenger(Passenger& passenger);
 
-    json getUser(int id);
-    json getOrder(int id);
-    json getAddress(int id);
-    json getCar(int id);
+
 
     //boolean authUser(User user, int securityPin);
 };
