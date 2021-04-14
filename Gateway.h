@@ -49,4 +49,5 @@ protected:
 
 
 
+
 #endif //HOMEWORK4_GATEWAY_H

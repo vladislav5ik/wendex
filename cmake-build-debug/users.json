@@ -5,9 +5,7 @@
             "id": 0,
             "name": "DName1",
             "ordersIds": [
-                1,
-                20,
-                53
+                1
             ],
             "rating": 5,
             "securityPin": 1234,
@@ -37,7 +35,27 @@
             ],
             "rating": 4.83,
             "securityPin": 1234
+        },
+        {
+            "addressesIds": [],
+            "defaultPaymentMethod": "",
+            "id": 1,
+            "name": "Anna",
+            "ordersIds": [],
+            "pinnedAddressesIds": [],
+            "rating": 0.0,
+            "securityPin": 123
+        },
+        {
+            "addressesIds": [],
+            "defaultPaymentMethod": "",
+            "id": 2,
+            "name": "Anna",
+            "ordersIds": [],
+            "pinnedAddressesIds": [],
+            "rating": 0.0,
+            "securityPin": 123
         }
     ],
-    "passengersCount": 1
+    "passengersCount": 3
 }

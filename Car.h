@@ -21,7 +21,6 @@ public:
 
 private:
     friend class Gateway;
-
     int id, freeBottleOfWater;
     double x, y;
     string carType, model, color, number;

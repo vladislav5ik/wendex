@@ -27,36 +27,36 @@ Gateway::Gateway(const string& fileNameUsers, const string& fileNameOrders,
 
 Car Gateway::addCar(Car& car) {
     car.id = jsonCars["carsCount"];
-    jsonCars["carsCount"] += 1;
-    jsonCars["cars"] += car.getJson();
+    jsonCars.at("carsCount") += 1;
+    jsonCars.at("cars") += car.getJson();
     return car;
 }
 
 Address Gateway::addAddress(Address &address) {
-    address.id = jsonCars["addressesCount"];
-    jsonCars["addressesCount"] += 1;
-    jsonCars["addresses"] += address.getJson();
+    address.id = jsonAddresses["addressesCount"];
+    jsonAddresses.at("addressesCount") += 1;
+    jsonAddresses.at("addresses") += address.getJson();
     return address;
 }
 
 Order Gateway::addOrder(Order &order) {
-    order.id = jsonCars["ordersCount"];
-    jsonCars["ordersCount"] += 1;
-    jsonCars["orders"] += order.getJson();
+    order.id = jsonOrders["ordersCount"];
+    jsonOrders.at("ordersCount") += 1;
+    jsonOrders.at("orders") += order.getJson();
     return order;
 }
 
 Driver Gateway::addDriver(Driver &driver) {
-    driver.id = jsonCars["driversCount"];
-    jsonCars["driversCount"] += 1;
-    jsonCars["drivers"] += driver.getJson();
+    driver.id = jsonUsers["driversCount"];
+    jsonUsers.at("driversCount") += 1;
+    jsonUsers.at("drivers") += driver.getJson();
     return driver;
 }
 
 Passenger Gateway::addPassenger(Passenger &passenger) {
-    passenger.id = jsonCars["passengersCount"];
-    jsonCars["passengersCount"] += 1;
-    jsonCars["passengers"] += passenger.getJson();
+    passenger.id = jsonUsers["passengersCount"];
+    jsonUsers.at("passengersCount") = 1 + passenger.id;
+    jsonUsers.at("passengers") += passenger.getJson();
     return passenger;
 }
 
@@ -72,6 +72,11 @@ void Gateway::saveAll() {
 
     ofstream orders_stream(fileNameOrders);
     orders_stream << setw(4) << jsonOrders << std::endl;
+
+    users_stream.close();
+    addresses_stream.close();
+    cars_stream.close();
+    orders_stream.close();
 }
 
 json Gateway::findPassenger(int id) {
