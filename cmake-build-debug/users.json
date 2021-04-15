@@ -55,7 +55,17 @@
             "pinnedAddressesIds": [],
             "rating": 0.0,
             "securityPin": 123
+        },
+        {
+            "addressesIds": [],
+            "defaultPaymentMethod": "",
+            "id": 3,
+            "name": "Anna",
+            "ordersIds": [],
+            "pinnedAddressesIds": [],
+            "rating": 0.0,
+            "securityPin": 123
         }
     ],
-    "passengersCount": 3
+    "passengersCount": 4
 }

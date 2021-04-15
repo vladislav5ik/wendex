@@ -17,6 +17,9 @@ public:
     bool login(const Driver& driver, int securityPin);
     Car createCar(string color, string model, string number, string carType);
     Driver createAccount(const string &name, Car car, int securityPin);
+    void getOrderHistory(Driver driver);
+    void setStatus(Driver driver, string status);
+    void getOrder(Driver driver, Order order);
 };
 
 

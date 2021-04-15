@@ -27,7 +27,7 @@ public:
     void getPinnedAddresses(Passenger passenger);
     void setDefaultPaymentMethod(Passenger passenger, const string& paymentMethod);
     void getOrderHistory(Passenger passenger);
-    void orderTaxi(Passenger passenger, Address from, Address to, string carType);
+    Order orderTaxi(Passenger passenger, Address from, Address to, string carType);
 
 };
 

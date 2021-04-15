@@ -11,10 +11,12 @@ using namespace nlohmann;
 
 class Gateway;
 class PassengerGateway;
+class DriverGateway;
 class Order {
 private:
     friend class Gateway;
     friend class PassengerGateway;
+    friend class DriverGateway;
 
 public:
     Order(bool isFinished, int id, int fromId, int toId, int driverId, int passengerId, int carId, int timeSeconds,

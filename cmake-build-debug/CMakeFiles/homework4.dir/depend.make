@@ -43,6 +43,7 @@ CMakeFiles/homework4.dir/Passenger.cpp.obj: ../json.hpp
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Address.h
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Car.h
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Driver.h
+CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../DriverGateway.h
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Gateway.h
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Order.h
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../Passenger.h

@@ -3,7 +3,7 @@
 //
 
 #include "PassengerGateway.h"
-
+#include "DriverGateway.h"
 PassengerGateway::PassengerGateway(const string &fileNameUsers, const string &fileNameOrders,
                                    const string &fileNameAddresses, const string &fileNameCars) :
                                    Gateway(fileNameUsers, fileNameOrders, fileNameAddresses, fileNameCars) {
@@ -98,7 +98,7 @@ void PassengerGateway::getPinnedAddresses(Passenger passenger) {
 }
 
 
-void PassengerGateway::orderTaxi(Passenger passenger, Address from, Address to, string carType) {
+Order PassengerGateway::orderTaxi(Passenger passenger, Address from, Address to, string carType) {
     for (int i = 0; i < Gateway::getDriversCount(); i++){
         json driver = Gateway::findDriver(i);
         if(Gateway::findCar(driver["carId"])["carType"] != carType ||
@@ -133,11 +133,11 @@ void PassengerGateway::orderTaxi(Passenger passenger, Address from, Address to, 
                 Gateway::addOrder(order);
                 passenger.ordersIds.push_back(order.id);
                 passenger.rating =(getRandomNumber(1,5) + passenger.rating) / passenger.ordersIds.size();
-                driver["rating"] =(getRandomNumber(1,5) + driver["rating"].get<int>()) / driver["ordersIds"].size();
                 saveAll();
-                return;
+                return order;
             }
         }
     }
     cout << "Sorry, there are no free drivers now.";
+    return Order(false,-1,-1,-1,-1,-1,-1,-1,-1,-1);
 }
