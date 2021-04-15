@@ -13,6 +13,7 @@ using namespace nlohmann;
 class Driver {
 private:
     friend class Gateway;
+    friend class PassengerGateway;
     int id, carId, securityPin;
     double rating;
     string status, name;
