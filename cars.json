@@ -1,0 +1,15 @@
+{
+    "cars": [
+        {
+            "carType": "business",
+            "color": "green",
+            "freeBottleOfWater": -1,
+            "id": 0,
+            "model": "Lada",
+            "number": "J985LD77",
+            "x": 222.35,
+            "y": 565.46
+        }
+    ],
+    "carsCount": 1
+}
