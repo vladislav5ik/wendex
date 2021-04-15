@@ -4,7 +4,9 @@
 
 #include "Car.h"
 
-
+Car::Car(int id, int freeBottleOfWater, double x, double y, const string &carType, const string &model,
+         const string &color, const string &number) : id(id), freeBottleOfWater(freeBottleOfWater), x(x), y(y),
+                                                      carType(carType), model(model), color(color), number(number) {}
 json Car::getJson() {
     json car = {
             {"id" , this->id},

@@ -13,8 +13,15 @@ CMakeFiles/homework4.dir/Driver.cpp.obj: ../Driver.cpp
 CMakeFiles/homework4.dir/Driver.cpp.obj: ../Driver.h
 CMakeFiles/homework4.dir/Driver.cpp.obj: ../json.hpp
 
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Address.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Car.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Driver.h
 CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../DriverGateway.cpp
 CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../DriverGateway.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Gateway.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Order.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../Passenger.h
+CMakeFiles/homework4.dir/DriverGateway.cpp.obj: ../json.hpp
 
 CMakeFiles/homework4.dir/Gateway.cpp.obj: ../Address.h
 CMakeFiles/homework4.dir/Gateway.cpp.obj: ../Car.h

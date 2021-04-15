@@ -20,7 +20,13 @@ public:
     json getJson();
 
 private:
+public:
+    Car(int id, int freeBottleOfWater, double x, double y, const string &carType, const string &model,
+        const string &color, const string &number);
+
+private:
     friend class Gateway;
+    friend class DriverGateway;
     int id, freeBottleOfWater;
     double x, y;
     string carType, model, color, number;

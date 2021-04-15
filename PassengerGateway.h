@@ -29,8 +29,6 @@ public:
     void getOrderHistory(Passenger passenger);
     void orderTaxi(Passenger passenger, Address from, Address to, string carType);
 
-private:
-    int getRandomNumber(int min, int max);
 };
 
 
