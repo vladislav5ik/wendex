@@ -49,6 +49,7 @@ struct loginError : public exception{
 
 class Gateway {
 public:
+    friend class AdminGateway;
     Gateway();
     static int getPassengersCount();
     static int getDriversCount();
@@ -83,7 +84,6 @@ protected:
     static void saveAddresses();
     static void saveCars();
     static void saveOrders();
-    static void updateAdmin(json jsonAdmin);
     static void updatePassenger(json jsonPassenger);
     static void updateDriver(json jsonDriver);
     static void updateOrder(json jsonOrder);

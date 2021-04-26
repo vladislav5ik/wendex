@@ -24,9 +24,9 @@ void DriverGateway::getOrderHistory(Driver driver) {
              << " from " << Gateway::findAddress(order.at("fromId")).at("title")
              << " from " << Gateway::findAddress(order.at("toId")).at("title");
         if(order.at("isFinished")){
-            cout << "finished";
+            cout << " - finished";
         } else {
-            cout << "now";
+            cout << " - now";
         }
         cout << endl;
 
@@ -113,7 +113,9 @@ void DriverGateway::getOrder(Driver driver) {
                 Gateway::updateOrder(jsonOrder);
                 Gateway::notifyPassenger(jsonOrder);
                 updateDriver(Driver::toJson(driver));
+                return;
             }
         }
+        cout << "Seems that there are no orders left" << endl;
     }
 }

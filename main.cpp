@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    Gateway::reset(); //WARNING it will erase your data
+    Gateway::reset(); //WARNING it will erase your data //todo make it Admin feature?
     cout << "Database was erased" << endl;
 
     try {
@@ -56,6 +56,10 @@ int main() {
     AdminGateway::validateCar(adm, car);
 
     DriverGateway::seeCars(d1);
-    DriverGateway::getOrder(d1);
+    DriverGateway::getOrder(d1); //interactive. For both driver and passenger.
+
+    DriverGateway::getOrderHistory(d1);
+    PassengerGateway::getOrderHistory(p1);
+    AdminGateway::seeAllData(adm);
     return 0;
 }

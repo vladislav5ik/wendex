@@ -8,13 +8,14 @@
 #include "Address.h"
 #include "Order.h"
 #include "Driver.h"
+class AdminGateway;
 
 class DriverGateway : Gateway{
 public:
+    friend class AdminGateway;
     DriverGateway();
     static Driver createAccount(const string &name, int securityPin);
     static Driver login(const string &name, int securityPin);
-
     static void linkCar(Driver& driver, Car& car);
     static void getOrderHistory(Driver driver);
     static void setStatus(Driver driver, string status);

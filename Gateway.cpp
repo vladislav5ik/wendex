@@ -182,10 +182,6 @@ void Gateway::updateCar(json jsonCar) {
     saveUsers();
 }
 
-void Gateway::updateAdmin(json jsonAdmin) {
-    Gateway::jsonUsers.at("admins").at((int)jsonAdmin.at("id")) = jsonAdmin;
-}
-
 json Gateway::findAdmin(int id) {
     return jsonUsers.at("admins").at(id);
 }
@@ -255,7 +251,7 @@ void Gateway::computeOrder(json &jsonOrder, const Car &car, const Driver &driver
     double distance = sqrt(pow((car.x - (double)jsonFrom.at("x")),2) +
             pow((car.y - (double)jsonFrom.at("y")),2));
 
-    int time = distance * 120 + getRandomNumber(1,10);
+    int time = distance * 120 + getRandomNumber(50,100);
     double cost = distance * multiplier;
 
     jsonOrder.at("distance") = distance;

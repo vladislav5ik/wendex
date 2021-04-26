@@ -7,6 +7,7 @@
 #include "Admin.h"
 #include "Gateway.h"
 #include "PassengerGateway.h"
+#include "DriverGateway.h"
 class AdminGateway : Gateway{
 public:
     AdminGateway() = default;

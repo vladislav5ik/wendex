@@ -15,6 +15,7 @@ CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../AdminGateway.cpp
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../AdminGateway.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Car.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Driver.h
+CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../DriverGateway.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Gateway.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Order.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Passenger.h
