@@ -3,20 +3,41 @@
 //
 #include "Driver.h"
 
-Driver::Driver(int id, int carId, int securityPin, double rating, const string &status, const string &name,
-               const vector<int> &ordersIds) : id(id), carId(carId), securityPin(securityPin), rating(rating),
+Driver::Driver(int id, vector<int> carIds, int securityPin, double rating, const string &status, const string &name,
+               const vector<int> &ordersIds) : id(id), carIds(carIds), securityPin(securityPin), rating(rating),
                                                status(status), name(name), ordersIds(ordersIds) {}
 
-json Driver::getJson() {
-    json orders = json::parse(this->ordersIds.begin(), this->ordersIds.end());
-    json driver = {
-            {"id", this->id},
-            {"name", this->name},
-            {"sucurityPin" , this->securityPin},
-            {"rating" , this->securityPin},
-            {"status" , this->status},
+json Driver::toJson(Driver driver) {
+    json orders, cars;
+    if(driver.ordersIds.empty()){
+        orders = json::parse("[]");
+    }else {
+        orders = json::parse(driver.ordersIds.begin(), driver.ordersIds.end());
+    }
+    if(driver.carIds.empty()){
+        cars = json::parse("[]");
+    }else {
+        cars = json::parse(driver.carIds.begin(), driver.carIds.end());
+    }
+    json jsonDriver = {
+            {"id", driver.id},
+            {"name", driver.name},
+            {"sucurityPin" , driver.securityPin},
+            {"rating" , driver.rating},
+            {"status" , driver.status},
             {"ordersIds" , orders},
-            {"carId" , this->carId}
+            {"carIds" , cars}
     };
+    return jsonDriver;
+}
+
+Driver Driver::toInstance(json jsonDriver) {
+    Driver driver = Driver(jsonDriver.at("id"),
+                           jsonDriver.at("carIds"),
+                           jsonDriver.at("sucurityPin"),
+                           jsonDriver.at("rating"),
+                           jsonDriver.at("status"),
+                           jsonDriver.at("name"),
+                           jsonDriver.at("ordersIds"));
     return driver;
 }

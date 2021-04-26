@@ -17,12 +17,7 @@ using namespace nlohmann;
 class Gateway;
 class Car {
 public:
-    json getJson();
-
-private:
-public:
-    Car(int id, int freeBottleOfWater, double x, double y, const string &carType, const string &model,
-        const string &color, const string &number);
+    Car(const string &number,const string &color, const string &model,const string &carType, double x, double y, int freeBottleOfWater = 0);
 
 private:
     friend class Gateway;
@@ -30,6 +25,9 @@ private:
     int id, freeBottleOfWater;
     double x, y;
     string carType, model, color, number;
+    bool is_validated;
+    static json toJson(Car car);
+    static Car toInstance(json jsonCar);
 };
 
 

@@ -17,15 +17,14 @@ class Passenger {
 private:
     friend class Gateway;
     friend class PassengerGateway;
-    int id, securityPin;
     Passenger(int id, int securityPin, double rating, const string &name, const string &defaultPaymentMethod,
               const vector<int> &addressesIds, const vector<int> &pinnedAddressesIds, const vector<int> &ordersIds);
-
-private:
+    int id, securityPin;
     double rating;
     string name, defaultPaymentMethod;
     vector<int> addressesIds, pinnedAddressesIds, ordersIds;
-    json getJson();
+    static json toJson(Passenger passenger);
+    static Passenger toInstance(json jsonPassenger);
 };
 
 

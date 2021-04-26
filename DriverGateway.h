@@ -11,15 +11,14 @@
 
 class DriverGateway : Gateway{
 public:
-    DriverGateway(const string &fileNameUsers, const string &fileNameOrders, const string &fileNameAddresses,
-                  const string &fileNameCars);
+    DriverGateway();
+    static Driver createAccount(const string &name, int securityPin);
+    static Driver login(const string &name, int securityPin);
 
-    bool login(const Driver& driver, int securityPin);
-    Car createCar(string color, string model, string number, string carType);
-    Driver createAccount(const string &name, Car car, int securityPin);
-    void getOrderHistory(Driver driver);
-    void setStatus(Driver driver, string status);
-    void getOrder(Driver driver, Order order);
+    static void linkCar(Driver& driver, Car& car);
+    static void getOrderHistory(Driver driver);
+    static void setStatus(Driver driver, string status);
+    //void getOrder(Driver driver, Order order);
 };
 
 

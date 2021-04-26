@@ -26,8 +26,8 @@ Passenger studentka = userApp.createAccount("Anna K.", 123);
   
 Address a = Address("University", "Innopolis, University st. 1", 123, 456);  
 Address b = Address("5ka", "Innopolis, Sportivnaya 152", 120, 450);
-userApp.addAddress(studentka, a);  
-userApp.addAddress(studentka, b);
+userApp.linkAddress(studentka, a);  
+userApp.linkAddress(studentka, b);
 ```
 ```C++
 Car myBusinessCar = driveApp.createCar("white", "WEndex self-driving", "a404ru", "Business");  
@@ -52,10 +52,10 @@ driveApp.setStatus(drifter, "Ready to work!");
 ```
 ####  Adresses
 - The address includes the `title`, the `full` street name, and the `x` and `y` coordinates
-- To store it in the database, you need to attach this address to someone's account using the `addAddress` method.
+- To store it in the database, you need to attach this address to someone's account using the `linkAddress` method.
  ```C++
 Address a = Address("University", "Innopolis, University st. 1", 123, 456);
-userApp.addAddress(studentka, a); 
+userApp.linkAddress(studentka, a); 
 ```
 Addresses can be displayed on the screen to see full information about them. For convenience, the address can be `pinned`, so that it is faster to find it among the others.
 ```C++

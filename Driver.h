@@ -14,14 +14,15 @@ class Driver {
 private:
     friend class Gateway;
     friend class DriverGateway;
-    int id, carId, securityPin;
+    Driver(int id, vector<int> carIds, int securityPin, double rating, const string &status, const string &name,
+           const vector<int> &ordersIds);
+    int id, securityPin;
     double rating;
     string status, name;
-    vector<int> ordersIds;
-    json getJson();
+    vector<int> ordersIds, carIds;
+    static json toJson(Driver driver);
+    static Driver toInstance(json jsonDriver);
 
-    Driver(int id, int carId, int securityPin, double rating, const string &status, const string &name,
-           const vector<int> &ordersIds);
 };
 
 

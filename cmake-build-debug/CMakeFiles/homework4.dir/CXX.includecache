@@ -20,6 +20,10 @@ C:/Users/Professional/CLionProjects/homework4/json.hpp
 string
 C:/Users/Professional/CLionProjects/homework4/string
 
+C:/Users/Professional/CLionProjects/homework4/Driver.cpp
+Driver.h
+C:/Users/Professional/CLionProjects/homework4/Driver.h
+
 C:/Users/Professional/CLionProjects/homework4/Driver.h
 string
 C:/Users/Professional/CLionProjects/homework4/string
@@ -27,6 +31,12 @@ vector
 C:/Users/Professional/CLionProjects/homework4/vector
 json.hpp
 C:/Users/Professional/CLionProjects/homework4/json.hpp
+
+C:/Users/Professional/CLionProjects/homework4/DriverGateway.cpp
+DriverGateway.h
+C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
+Car.h
+C:/Users/Professional/CLionProjects/homework4/Car.h
 
 C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
 Gateway.h
@@ -38,7 +48,15 @@ C:/Users/Professional/CLionProjects/homework4/Order.h
 Driver.h
 C:/Users/Professional/CLionProjects/homework4/Driver.h
 
+C:/Users/Professional/CLionProjects/homework4/Gateway.cpp
+Gateway.h
 C:/Users/Professional/CLionProjects/homework4/Gateway.h
+iomanip
+-
+
+C:/Users/Professional/CLionProjects/homework4/Gateway.h
+utility
+-
 fstream
 C:/Users/Professional/CLionProjects/homework4/fstream
 iostream
@@ -69,6 +87,12 @@ vector
 C:/Users/Professional/CLionProjects/homework4/vector
 json.hpp
 C:/Users/Professional/CLionProjects/homework4/json.hpp
+
+C:/Users/Professional/CLionProjects/homework4/PassengerGateway.cpp
+PassengerGateway.h
+C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
+DriverGateway.h
+C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
 
 C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
 Gateway.h
@@ -407,6 +431,8 @@ vector
 -
 
 C:/Users/Professional/CLionProjects/homework4/main.cpp
+Gateway.h
+C:/Users/Professional/CLionProjects/homework4/Gateway.h
 PassengerGateway.h
 C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
 DriverGateway.h

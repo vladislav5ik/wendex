@@ -11,16 +11,19 @@ using namespace nlohmann;
 
 class Gateway;
 class PassengerGateway;
+
 class Address {
 public:
     Address(const string &title, const string &full, double x, double y);
 private:
     friend class Gateway;
     friend class PassengerGateway;
+
     int id;
     string title, full;
     double x,y;
-    json getJson();
+    static json toJson(Address address);
+    static Address toInstance(json jsonAddress);
 };
 
 

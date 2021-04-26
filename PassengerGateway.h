@@ -12,25 +12,22 @@
 #include "vector"
 using namespace std;
 
-
 class PassengerGateway : Gateway{
 public:
-    PassengerGateway(const string &fileNameUsers, const string &fileNameOrders,
-                     const string &fileNameAddresses, const string &fileNameCars);
-    Passenger createAccount(const string &name, int securityPin);
-    bool login(const Passenger& passenger, int securityPin);
+    PassengerGateway();
+    static Passenger createAccount(const string &name, int securityPin);
+    static Passenger login(const string &name, int securityPin);
 
-    void addAddress(Passenger passenger, Address address);
-    void pinAddress(Passenger& passenger, const Address& address);
-    void unPinAddress(Passenger& passenger, const Address& address);
-    void getAddresses(Passenger passenger);
-    void getPinnedAddresses(Passenger passenger);
-    void setDefaultPaymentMethod(Passenger passenger, const string& paymentMethod);
-    void getOrderHistory(Passenger passenger);
-    Order orderTaxi(Passenger passenger, Address from, Address to, string carType);
+    static void linkAddress(Passenger& passenger, Address& address);
+    static void pinAddress(Passenger& passenger, Address& address);
+    static void unPinAddress(Passenger& passenger, Address& address);
+    static void getAddresses(Passenger passenger);
+    static void getPinnedAddresses(Passenger passenger);
+    static void setDefaultPaymentMethod(Passenger passenger, const string& paymentMethod);
+    static void getOrderHistory(Passenger passenger);
+    Order addOrder(Passenger passenger, Address from, Address to, string carType); //addOrder so-called
 
 };
-
 
 
 

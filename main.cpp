@@ -6,42 +6,39 @@ using namespace std;
 
 
 int main() {
-    Gateway g = Gateway("users.json", "orders.json", "addresses.json", "cars.json");
+    DriverGateway driveApp;
+    PassengerGateway userApp;
 
-    DriverGateway driveApp = DriverGateway("users.json", "orders.json", "addresses.json", "cars.json");
-    Car myBusinessCar = driveApp.createCar("white", "WEndex self-driving", "a404ru", "Business");
-    Driver drifter = driveApp.createAccount("Drifter Driftovich", myBusinessCar, 1234);
-
-    PassengerGateway userApp = PassengerGateway("users.json", "orders.json", "addresses.json", "cars.json");
-    Passenger studentka = userApp.createAccount("Anna K.", 123);
+    Car myBusinessCar = Car("a404ru", "white", "WEndex self-driving", "Business", 152, 165);
+    //Driver drifter = driveApp.createAccount("Drifter Driftovich", myBusinessCar, 1234);
+    Driver drifter1 = driveApp.login("Drifter Driftovich", 1234);
+    //Passenger studentka = userApp.createAccount("Anna K.", 123);
 
     Address a = Address("University", "Innopolis, University st. 1", 123, 456);
     Address b = Address("5ka", "Innopolis, Sportivnaya 152", 120, 450);
+    //Address c = Gateway::getAddress("5ka"); //result - error because address not linked to any user and hence not found in database
 
-    if (userApp.login(studentka, 123)) {
-        userApp.addAddress(studentka, a);
-        userApp.addAddress(studentka, b);
+    Passenger studentka1 = userApp.login("Anna K.", 123);
+        userApp.linkAddress(studentka1, a);
+        userApp.linkAddress(studentka1, b);
 
-        userApp.pinAddress(studentka, a);
-        userApp.getPinnedAddresses(studentka);
-        userApp.unPinAddress(studentka, a);
+        userApp.pinAddress(studentka1, a);
+        userApp.getPinnedAddresses(studentka1);
+        userApp.unPinAddress(studentka1, a);
 
-        userApp.getAddresses(studentka);
-        userApp.getOrderHistory(studentka);
-        userApp.setDefaultPaymentMethod(studentka, "card");
+        userApp.getAddresses(studentka1);
+        userApp.getOrderHistory(studentka1);
+        userApp.setDefaultPaymentMethod(studentka1, "card");
 
-        Order order = userApp.orderTaxi(studentka, a, b, "Business");
+        Order order = userApp.addOrder(studentka1, a, b, "Business");
 
-        if (driveApp.login(drifter, 1234)) {
-            driveApp.setStatus(drifter, "in ride");
+        drifter1 = driveApp.login("Drifter Driftovich", 1234);
+        driveApp.setStatus(drifter1, "in ride");
 
-            driveApp.getOrder(drifter, order);
-            driveApp.getOrderHistory(drifter);
-            driveApp.setStatus(drifter, "Ready to work!");
-        }
-        userApp.getOrderHistory(studentka);
-    }
-    // All data is always saved in json files.
-
+//            driveApp.getOrder(drifter, order);
+            driveApp.getOrderHistory(drifter1);
+            driveApp.setStatus(drifter1, "free");
+        userApp.getOrderHistory(studentka1);
+        // All data is always saved in json files.
     return 0;
 }

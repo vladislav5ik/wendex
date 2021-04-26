@@ -12,21 +12,21 @@ using namespace nlohmann;
 class Gateway;
 class PassengerGateway;
 class DriverGateway;
+
 class Order {
 private:
     friend class Gateway;
     friend class PassengerGateway;
     friend class DriverGateway;
 
-public:
-    Order(bool isFinished, int id, int fromId, int toId, int driverId, int passengerId, int carId, int timeSeconds,
-          double distance, double cost);
-
 private:
+    Order(int fromId, int toId, int passengerId, string carType);
+    //add recipe getter (toString method like)
     bool is_finished;
-    int id, fromId, toId, driverId, passengerId, carId, timeSeconds;
+    int id, fromId, toId, driverId, passengerId, timeSeconds;
     double distance, cost;
-    json getJson();
+    string carType;
+    static json toJson(Order order);
 };
 
 

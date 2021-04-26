@@ -11,19 +11,31 @@ Passenger::Passenger(int id, int securityPin, double rating, const string &name,
                                                      addressesIds(addressesIds), pinnedAddressesIds(pinnedAddressesIds),
                                                      ordersIds(ordersIds) {}
 
-json Passenger::getJson() {
-    json orders = ordersIds;
-    json pinned = pinnedAddressesIds;
-    json addresses = addressesIds;
-    json passenger = {
-            {"id", this->id},
-            {"name", this->name},
-            {"securityPin" , this->securityPin},
-            {"rating", this->rating},
+json Passenger::toJson(Passenger passenger) {
+    json orders = passenger.ordersIds;
+    json pinned = passenger.pinnedAddressesIds;
+    json addresses = passenger.addressesIds;
+    json jsonPassenger = {
+            {"id", passenger.id},
+            {"name", passenger.name},
+            {"securityPin" , passenger.securityPin},
+            {"rating", passenger.rating},
             {"addressesIds", addresses},
             {"pinnedAddressesIds" , pinned},
-            {"defaultPaymentMethod", this->defaultPaymentMethod},
+            {"defaultPaymentMethod", passenger.defaultPaymentMethod},
             {"ordersIds" , orders}
     };
+    return jsonPassenger;
+}
+
+Passenger Passenger::toInstance(json jsonPassenger) {
+    Passenger passenger = Passenger(jsonPassenger.at("id"),
+                                    jsonPassenger.at("securityPin"),
+                                    jsonPassenger.at("rating"),
+                                    jsonPassenger.at("name"),
+                                    jsonPassenger.at("defaultPaymentMethod"),
+                                    jsonPassenger.at("addressesIds"),
+                                    jsonPassenger.at("pinnedAddressesIds"),
+                                    jsonPassenger.at("ordersIds"));
     return passenger;
 }
