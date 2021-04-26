@@ -8,16 +8,12 @@ Driver::Driver(int id, vector<int> carIds, int securityPin, double rating, const
                                                status(status), name(name), ordersIds(ordersIds) {}
 
 json Driver::toJson(Driver driver) {
-    json orders, cars;
-    if(driver.ordersIds.empty()){
-        orders = json::parse("[]");
-    }else {
-        orders = json::parse(driver.ordersIds.begin(), driver.ordersIds.end());
+    json orders = json::parse("[]"), cars = json::parse("[]");
+    for(int item: driver.ordersIds){
+        orders.push_back(item);
     }
-    if(driver.carIds.empty()){
-        cars = json::parse("[]");
-    }else {
-        cars = json::parse(driver.carIds.begin(), driver.carIds.end());
+    for(int item: driver.carIds){
+        cars.push_back(item);
     }
     json jsonDriver = {
             {"id", driver.id},

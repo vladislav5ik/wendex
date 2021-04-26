@@ -26,7 +26,7 @@ public:
     static void getPinnedAddresses(Passenger passenger);
     static void setDefaultPaymentMethod(Passenger passenger, const string& paymentMethod);
     static void getOrderHistory(Passenger passenger);
-    Order addOrder(Passenger passenger, Address from, Address to, string carType); //addOrder so-called
+    static Order addOrder(Passenger passenger, Address from, Address to, string carType); //addOrder so-called
 
 };
 

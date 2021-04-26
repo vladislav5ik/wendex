@@ -1,45 +1,60 @@
 #include "Gateway.h"
 #include "PassengerGateway.h"
 #include "DriverGateway.h"
+#include "AdminGateway.h"
 
 using namespace std;
 
-
 int main() {
-    DriverGateway driveApp;
-    PassengerGateway userApp;
+    Gateway::reset(); //WARNING it will erase your data
+    cout << "Database was erased" << endl;
 
-    Car myBusinessCar = Car("a404ru", "white", "WEndex self-driving", "Business", 152, 165);
-    //Driver drifter = driveApp.createAccount("Drifter Driftovich", 1234);
+    try {
+        Passenger p1 = PassengerGateway::createAccount("Vladislav", 1234);
+        Passenger p2 = PassengerGateway::createAccount("Vladislav", 4321);
+    } catch (alreadyExists& e) {
+        cout << e.what();
+        cout << " - Only one user with unique name was created" << endl;
+    }
 
-    Driver drifter1 = driveApp.login("Drifter Driftovich", 1234);
-    //Passenger studentka = userApp.createAccount("Anna K.", 123);
+    Passenger p1 = PassengerGateway::login("Vladislav", 1234);
+    Driver d1 = DriverGateway::createAccount("Alex", 7777);
+    try {
+        d1 = DriverGateway::login("Alex", 5656); //by the way driver is already authorized in var d1
+    } catch (loginError& e) { //incorrect security pin
+        cout << e.what() << endl;
+    }
+    try {
+        Driver d2 = DriverGateway::login("Max", 1111); //not registered
+    } catch (notFound& e) {
+        cout << e.what() << endl;
+    }
 
-    Address a = Address("University", "Innopolis, University st. 1", 123, 456);
-    Address b = Address("5ka", "Innopolis, Sportivnaya 152", 120, 450);
-    //Address c = Gateway::getAddress("5ka"); //result - error because address not linked to any user and hence not found in database
+    Address a1("5ka", "Innopolis, street Sportivnaya 25/1", 5.59, 55.30);
+    Address a2("uni", "Innopolis, street University 1", 5.89,55.9);
+    PassengerGateway::linkAddress(p1,a1);
+    PassengerGateway::pinAddress(p1,a1);
+    PassengerGateway::linkAddress(p1, a2);
 
-    Passenger studentka1 = userApp.login("Anna K.", 123);
-        //userApp.linkAddress(studentka1, a);
-        //userApp.linkAddress(studentka1, b);
+    PassengerGateway::getAddresses(p1);
+    PassengerGateway::getPinnedAddresses(p1);
 
-        userApp.pinAddress(studentka1, a);
-        userApp.getPinnedAddresses(studentka1);
-        userApp.unPinAddress(studentka1, a);
+    PassengerGateway::unPinAddress(p1,a1);
+    PassengerGateway::getPinnedAddresses(p1);
 
-        userApp.getAddresses(studentka1);
-        userApp.getOrderHistory(studentka1);
-        userApp.setDefaultPaymentMethod(studentka1, "card");
+    PassengerGateway::setDefaultPaymentMethod(p1, "card");
+    Order o1 = PassengerGateway::addOrder(p1,a1,a2,"business");
+    PassengerGateway::getOrderHistory(p1);
 
-        Order order = userApp.addOrder(studentka1, a, b, "Business");
+    Car car("M563OP77","RED","WENDEX SELF-DRIVING","business",5.39,55.9);
+    DriverGateway::linkCar(d1,car);
+    DriverGateway::seeCars(d1);
+    DriverGateway::setStatus(d1, "free");
 
-        drifter1 = driveApp.login("Drifter Driftovich", 1234);
-        driveApp.setStatus(drifter1, "in ride");
+    Admin adm = AdminGateway::createAccount("Elena", 7979);
+    AdminGateway::blockCar(adm,car); //However, car was blocked since creation. But admin can block manually at any moment.
+    AdminGateway::validateCar(adm, car);
 
-//            driveApp.getOrder(drifter, order);
-            driveApp.getOrderHistory(drifter1);
-            driveApp.setStatus(drifter1, "free");
-        userApp.getOrderHistory(studentka1);
-        // All data is always saved in json files.
+    DriverGateway::seeCars(d1);
     return 0;
 }

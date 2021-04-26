@@ -15,6 +15,7 @@ using namespace nlohmann;
 
 
 class Gateway;
+class AdminGateway;
 class Car {
 public:
     Car(const string &number,const string &color, const string &model,const string &carType, double x, double y, int freeBottleOfWater = 0);
@@ -22,6 +23,7 @@ public:
 private:
     friend class Gateway;
     friend class DriverGateway;
+    friend class AdminGateway;
     int id, freeBottleOfWater;
     double x, y;
     string carType, model, color, number;

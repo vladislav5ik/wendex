@@ -75,7 +75,7 @@ void DriverGateway::seeCars(Driver driver) {
         cout << "You have no cars yet" << endl;
         return;
     }
-    cout << "You have " + to_string(driver.carIds.size()) + " addresses:" << endl;
+    cout << "You have " + to_string(driver.carIds.size()) + " cars:" << endl;
     for(int i = 0; i < driver.carIds.size(); i++){
         json car = Gateway::findCar(driver.carIds[i]);
         cout << car.at("number") << " - " << car.at("model")
@@ -84,9 +84,9 @@ void DriverGateway::seeCars(Driver driver) {
              << " , water left = " << car.at("freeBottleOfWater")
              << " , coordinates =" << car.at("x") << ":" << car.at("y");
         if(car.at("is_validated")){
-            cout << " - validated";
+            cout << " - VALIDATED";
         } else {
-            cout << " - not validated";
+            cout << " - NOT VALIDATED (waiting Admin approval)";
         }
         cout << endl;
     }}

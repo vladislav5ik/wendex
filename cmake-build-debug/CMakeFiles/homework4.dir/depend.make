@@ -18,6 +18,7 @@ CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Driver.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Gateway.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Order.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../Passenger.h
+CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../PassengerGateway.h
 CMakeFiles/homework4.dir/AdminGateway.cpp.obj: ../json.hpp
 
 CMakeFiles/homework4.dir/Car.cpp.obj: ../Car.cpp
@@ -71,6 +72,7 @@ CMakeFiles/homework4.dir/PassengerGateway.cpp.obj: ../json.hpp
 
 CMakeFiles/homework4.dir/main.cpp.obj: ../Address.h
 CMakeFiles/homework4.dir/main.cpp.obj: ../Admin.h
+CMakeFiles/homework4.dir/main.cpp.obj: ../AdminGateway.h
 CMakeFiles/homework4.dir/main.cpp.obj: ../Car.h
 CMakeFiles/homework4.dir/main.cpp.obj: ../Driver.h
 CMakeFiles/homework4.dir/main.cpp.obj: ../DriverGateway.h

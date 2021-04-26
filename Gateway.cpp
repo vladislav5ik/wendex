@@ -25,6 +25,7 @@ void Gateway::addCar(Car& car) {
         jsonCars.at("carsCount") = (int) jsonCars.at("carsCount") + 1;
         jsonCars.at("cars").push_back(Car::toJson(car));
         saveCars();
+        return;
     }
     throw alreadyExists("car number" + car.number);
 }
@@ -37,6 +38,7 @@ void Gateway::addAddress(Address &address) {
         jsonAddresses.at("addressesCount") = (int) jsonAddresses.at("addressesCount") + 1;
         jsonAddresses.at("addresses").push_back(Address::toJson(address));
         saveAddresses();
+        return;
     }
     throw alreadyExists("title " + address.title);
 }
@@ -188,7 +190,7 @@ json Gateway::findAdmin(int id) {
 }
 
 int Gateway::getAdminCount() {
-    return jsonUsers.at("adminCount");
+    return jsonUsers.at("adminsCount");
 }
 
 Admin Gateway::getAdmin(string name) {
@@ -204,5 +206,32 @@ void Gateway::addAdmin(Admin &admin) {
     jsonUsers.at("adminsCount") = 1 + admin.id;
     jsonUsers.at("admins").push_back(Admin::toJson(admin));
     saveUsers();
+}
+
+void Gateway::reset() {
+    jsonUsers = {
+            {"drivers", json::parse("[]")},
+            { "driversCount", 0},
+            { "passengers", json::parse("[]") },
+            { "passengersCount", 0 },
+            { "admins",  json::parse("[]")},
+            { "adminsCount", 0 }
+    };
+    jsonAddresses = {
+            {"addresses", json::parse("[]")},
+            {"addressesCount", 0}
+    };
+    jsonCars = {
+            {"cars", json::parse("[]")},
+            {"carsCount", 0}
+    };
+    jsonOrders = {
+            {"orders", json::parse("[]")},
+            {"ordersCount", 0}
+    };
+    saveUsers();
+    saveOrders();
+    saveAddresses();
+    saveCars();
 }
 

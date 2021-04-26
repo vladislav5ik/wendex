@@ -31,6 +31,7 @@ void PassengerGateway::linkAddress(Passenger& passenger, Address& address) {
         Gateway::addAddress(address);
     passenger.addressesIds.push_back(address.id);
     Gateway::updatePassenger(Passenger::toJson(passenger));
+    cout << "Address " << address.title << " was linked to " << passenger.name << endl;
 }
 void PassengerGateway::pinAddress(Passenger& passenger,  Address& address) {
     passenger = Passenger::toInstance(Gateway::findPassenger(passenger.id));
@@ -73,9 +74,9 @@ void PassengerGateway::getOrderHistory(Passenger passenger) {
             << " from " << Gateway::findAddress(order.at("fromId")).at("title")
             << " from " << Gateway::findAddress(order.at("toId")).at("title");
         if(order.at("isFinished")){
-            cout << "finished";
+            cout << " - finished";
         } else {
-            cout << "searching for car";
+            cout << " - searching for car";
         }
         cout << endl;
 
@@ -162,6 +163,7 @@ Order PassengerGateway::addOrder(Passenger passenger, Address from, Address to, 
     //            passenger.ordersIds.push_back(order.id);
     //            passenger.rating =(getRandomNumber(1,5) + passenger.rating) / passenger.ordersIds.size();
     //            saveAll();
+    cout<< "You have ordered " << order.carType << " car from " << from.title << " to " << to.title << "." << endl;
                 return order;
     //        }
     //    }

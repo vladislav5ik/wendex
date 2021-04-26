@@ -13,6 +13,8 @@ public:
     static Admin createAccount(const string &name, int securityPin);
     static Admin login(const string &name, int securityPin);
     static void seeAllData(Admin admin);
+    static void validateCar(Admin admin, Car car);
+    static void blockCar(Admin admin, Car car);
 };
 
 

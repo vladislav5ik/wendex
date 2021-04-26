@@ -30,3 +30,13 @@ void AdminGateway::seeAllData(Admin admin) {
         cout << "-" << i << "-"; PassengerGateway::getOrderHistory(passenger);
     }
 }
+
+void AdminGateway::validateCar(Admin admin, Car car) {
+    car.is_validated = true;
+    updateCar(Car::toJson(car));
+}
+
+void AdminGateway::blockCar(Admin admin, Car car) {
+    car.is_validated = false;
+    updateCar(Car::toJson(car));
+}
