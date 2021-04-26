@@ -5,6 +5,21 @@ CMakeFiles/homework4.dir/Address.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Address.cpp
  C:/Users/Professional/CLionProjects/homework4/Address.h
  C:/Users/Professional/CLionProjects/homework4/json.hpp
+CMakeFiles/homework4.dir/Admin.cpp.obj
+ C:/Users/Professional/CLionProjects/homework4/Admin.cpp
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
+ C:/Users/Professional/CLionProjects/homework4/json.hpp
+CMakeFiles/homework4.dir/AdminGateway.cpp.obj
+ C:/Users/Professional/CLionProjects/homework4/Address.h
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
+ C:/Users/Professional/CLionProjects/homework4/AdminGateway.cpp
+ C:/Users/Professional/CLionProjects/homework4/AdminGateway.h
+ C:/Users/Professional/CLionProjects/homework4/Car.h
+ C:/Users/Professional/CLionProjects/homework4/Driver.h
+ C:/Users/Professional/CLionProjects/homework4/Gateway.h
+ C:/Users/Professional/CLionProjects/homework4/Order.h
+ C:/Users/Professional/CLionProjects/homework4/Passenger.h
+ C:/Users/Professional/CLionProjects/homework4/json.hpp
 CMakeFiles/homework4.dir/Car.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Car.cpp
  C:/Users/Professional/CLionProjects/homework4/Car.h
@@ -15,6 +30,7 @@ CMakeFiles/homework4.dir/Driver.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/json.hpp
 CMakeFiles/homework4.dir/DriverGateway.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Address.h
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
  C:/Users/Professional/CLionProjects/homework4/Car.h
  C:/Users/Professional/CLionProjects/homework4/Driver.h
  C:/Users/Professional/CLionProjects/homework4/DriverGateway.cpp
@@ -25,6 +41,7 @@ CMakeFiles/homework4.dir/DriverGateway.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/json.hpp
 CMakeFiles/homework4.dir/Gateway.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Address.h
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
  C:/Users/Professional/CLionProjects/homework4/Car.h
  C:/Users/Professional/CLionProjects/homework4/Driver.h
  C:/Users/Professional/CLionProjects/homework4/Gateway.cpp
@@ -42,6 +59,7 @@ CMakeFiles/homework4.dir/Passenger.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/json.hpp
 CMakeFiles/homework4.dir/PassengerGateway.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Address.h
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
  C:/Users/Professional/CLionProjects/homework4/Car.h
  C:/Users/Professional/CLionProjects/homework4/Driver.h
  C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
@@ -53,6 +71,7 @@ CMakeFiles/homework4.dir/PassengerGateway.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/json.hpp
 CMakeFiles/homework4.dir/main.cpp.obj
  C:/Users/Professional/CLionProjects/homework4/Address.h
+ C:/Users/Professional/CLionProjects/homework4/Admin.h
  C:/Users/Professional/CLionProjects/homework4/Car.h
  C:/Users/Professional/CLionProjects/homework4/Driver.h
  C:/Users/Professional/CLionProjects/homework4/DriverGateway.h

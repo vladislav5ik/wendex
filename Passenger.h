@@ -13,8 +13,10 @@ using namespace nlohmann;
 
 class Gateway;
 class PassengerGateway;
+class AdminGateway;
 class Passenger {
 private:
+    friend  class AdminGateway;
     friend class Gateway;
     friend class PassengerGateway;
     Passenger(int id, int securityPin, double rating, const string &name, const string &defaultPaymentMethod,

@@ -78,7 +78,7 @@ void DriverGateway::seeCars(Driver driver) {
     cout << "You have " + to_string(driver.carIds.size()) + " addresses:" << endl;
     for(int i = 0; i < driver.carIds.size(); i++){
         json car = Gateway::findCar(driver.carIds[i]);
-        cout << car.at("number") << " - " << car.at("model") //todo fix
+        cout << car.at("number") << " - " << car.at("model")
              << " , color = " << car.at("color")
              << " , type = " << car.at("carType")
              << " , water left = " << car.at("freeBottleOfWater")

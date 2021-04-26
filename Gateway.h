@@ -10,15 +10,18 @@
 #include "iostream"
 #include "json.hpp"
 #include "Address.h"
+#include "Admin.h"
 #include "Car.h"
 #include "Order.h"
 #include "Driver.h"
 #include "Passenger.h"
 
+
 using namespace nlohmann;
 using namespace std;
-
+class AdminGateway;
 struct notFound : public exception{
+    friend  class AdminGateway;
     string parameterName;
     notFound(string parameterName = "Parameter"){
        this->parameterName = parameterName;
@@ -52,12 +55,14 @@ public:
     static json findDriver(int id);
     static json findOrder(int id);
     static json findCar(int id);
+    static json findAdmin(int id);
 
     static int getPassengersCount();
     static int getDriversCount();
     static int getOrdersCount();
     static int getAddressesCount();
     static int getCarsCount();
+    static int getAdminCount();
 
     static Address getAddress(string title);
     static Car getCar(string number);
@@ -71,6 +76,8 @@ protected:
 
     static Driver getDriver(string name);
 
+    static Admin getAdmin(string name);
+
     static void addAddress(Address& address);
 
     static void addCar(Car& car);
@@ -78,6 +85,8 @@ protected:
     static void addOrder(Order& order); //getRecipe will be (like toString)?
 
     static void addDriver(Driver& driver);
+
+    static void addAdmin(Admin& admin);
 
     static void addPassenger(Passenger& passenger);
 
@@ -92,6 +101,7 @@ protected:
     static void saveCars();
     static void saveOrders();
 
+    static void updateAdmin(json jsonAdmin);
     static void updatePassenger(json jsonPassenger);
     static void updateDriver(json jsonDriver);
     static void updateOrder(json jsonOrder);

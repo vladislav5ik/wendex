@@ -179,3 +179,30 @@ void Gateway::updateCar(json jsonCar) {
     saveUsers();
 }
 
+void Gateway::updateAdmin(json jsonAdmin) {
+    Gateway::jsonUsers.at("admins").at((int)jsonAdmin.at("id")) = jsonAdmin;
+}
+
+json Gateway::findAdmin(int id) {
+    return jsonUsers.at("admins").at(id);
+}
+
+int Gateway::getAdminCount() {
+    return jsonUsers.at("adminCount");
+}
+
+Admin Gateway::getAdmin(string name) {
+    for (int id = 0; id < getAdminCount(); id++){
+        json jsonAdmin = findAdmin(id);
+        if (jsonAdmin.at("name") == name)
+            return Admin::toInstance(jsonAdmin);
+    }
+    throw notFound("Admin's name " + name);}
+
+void Gateway::addAdmin(Admin &admin) {
+    admin.id = jsonUsers.at("adminsCount");
+    jsonUsers.at("adminsCount") = 1 + admin.id;
+    jsonUsers.at("admins").push_back(Admin::toJson(admin));
+    saveUsers();
+}
+

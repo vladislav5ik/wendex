@@ -11,9 +11,10 @@
 
 #include "vector"
 using namespace std;
-
+class AdminGateway;
 class PassengerGateway : Gateway{
 public:
+    friend class AdminGateway;
     PassengerGateway();
     static Passenger createAccount(const string &name, int securityPin);
     static Passenger login(const string &name, int securityPin);
