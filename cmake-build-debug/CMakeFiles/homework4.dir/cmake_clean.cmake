@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/homework4.dir/Address.cpp.obj"
+  "CMakeFiles/homework4.dir/Admin.cpp.obj"
+  "CMakeFiles/homework4.dir/AdminGateway.cpp.obj"
   "CMakeFiles/homework4.dir/Car.cpp.obj"
   "CMakeFiles/homework4.dir/Driver.cpp.obj"
   "CMakeFiles/homework4.dir/DriverGateway.cpp.obj"

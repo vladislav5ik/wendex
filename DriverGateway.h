@@ -19,6 +19,7 @@ public:
     static void getOrderHistory(Driver driver);
     static void setStatus(Driver driver, string status);
     //void getOrder(Driver driver, Order order);
+    void seeCars(Driver driver);
 };
 
 

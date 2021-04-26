@@ -10,7 +10,8 @@ int main() {
     PassengerGateway userApp;
 
     Car myBusinessCar = Car("a404ru", "white", "WEndex self-driving", "Business", 152, 165);
-    //Driver drifter = driveApp.createAccount("Drifter Driftovich", myBusinessCar, 1234);
+    //Driver drifter = driveApp.createAccount("Drifter Driftovich", 1234);
+
     Driver drifter1 = driveApp.login("Drifter Driftovich", 1234);
     //Passenger studentka = userApp.createAccount("Anna K.", 123);
 
@@ -19,8 +20,8 @@ int main() {
     //Address c = Gateway::getAddress("5ka"); //result - error because address not linked to any user and hence not found in database
 
     Passenger studentka1 = userApp.login("Anna K.", 123);
-        userApp.linkAddress(studentka1, a);
-        userApp.linkAddress(studentka1, b);
+        //userApp.linkAddress(studentka1, a);
+        //userApp.linkAddress(studentka1, b);
 
         userApp.pinAddress(studentka1, a);
         userApp.getPinnedAddresses(studentka1);

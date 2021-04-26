@@ -169,6 +169,60 @@ Address.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/Address.cpp.s
 .PHONY : Address.cpp.s
 
+Admin.obj: Admin.cpp.obj
+
+.PHONY : Admin.obj
+
+# target to build an object file
+Admin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/Admin.cpp.obj
+.PHONY : Admin.cpp.obj
+
+Admin.i: Admin.cpp.i
+
+.PHONY : Admin.i
+
+# target to preprocess a source file
+Admin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/Admin.cpp.i
+.PHONY : Admin.cpp.i
+
+Admin.s: Admin.cpp.s
+
+.PHONY : Admin.s
+
+# target to generate assembly for a file
+Admin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/Admin.cpp.s
+.PHONY : Admin.cpp.s
+
+AdminGateway.obj: AdminGateway.cpp.obj
+
+.PHONY : AdminGateway.obj
+
+# target to build an object file
+AdminGateway.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/AdminGateway.cpp.obj
+.PHONY : AdminGateway.cpp.obj
+
+AdminGateway.i: AdminGateway.cpp.i
+
+.PHONY : AdminGateway.i
+
+# target to preprocess a source file
+AdminGateway.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/AdminGateway.cpp.i
+.PHONY : AdminGateway.cpp.i
+
+AdminGateway.s: AdminGateway.cpp.s
+
+.PHONY : AdminGateway.s
+
+# target to generate assembly for a file
+AdminGateway.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\homework4.dir\build.make CMakeFiles/homework4.dir/AdminGateway.cpp.s
+.PHONY : AdminGateway.cpp.s
+
 Car.obj: Car.cpp.obj
 
 .PHONY : Car.obj
@@ -397,6 +451,12 @@ help:
 	@echo ... Address.obj
 	@echo ... Address.i
 	@echo ... Address.s
+	@echo ... Admin.obj
+	@echo ... Admin.i
+	@echo ... Admin.s
+	@echo ... AdminGateway.obj
+	@echo ... AdminGateway.i
+	@echo ... AdminGateway.s
 	@echo ... Car.obj
 	@echo ... Car.i
 	@echo ... Car.s

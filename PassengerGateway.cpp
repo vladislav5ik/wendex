@@ -27,7 +27,8 @@ Passenger PassengerGateway::login(const string & name, int securityPin) {
 
 void PassengerGateway::linkAddress(Passenger& passenger, Address& address) {
     passenger = Passenger::toInstance(Gateway::findPassenger(passenger.id));
-    Gateway::addAddress(address);
+    if(address.id == -1)
+        Gateway::addAddress(address);
     passenger.addressesIds.push_back(address.id);
     Gateway::updatePassenger(Passenger::toJson(passenger));
 }

@@ -12,9 +12,9 @@ Passenger::Passenger(int id, int securityPin, double rating, const string &name,
                                                      ordersIds(ordersIds) {}
 
 json Passenger::toJson(Passenger passenger) {
-    json orders = passenger.ordersIds;
-    json pinned = passenger.pinnedAddressesIds;
-    json addresses = passenger.addressesIds;
+    json orders = json::parse(passenger.ordersIds.begin(), passenger.ordersIds.end());
+    json pinned = json::parse(passenger.pinnedAddressesIds.begin(), passenger.pinnedAddressesIds.end());
+    json addresses = json::parse(passenger.addressesIds.begin(), passenger.addressesIds.end());
     json jsonPassenger = {
             {"id", passenger.id},
             {"name", passenger.name},

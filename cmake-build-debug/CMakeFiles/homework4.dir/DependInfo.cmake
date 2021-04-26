@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Professional/CLionProjects/homework4/Address.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/Address.cpp.obj"
+  "C:/Users/Professional/CLionProjects/homework4/Admin.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/Admin.cpp.obj"
+  "C:/Users/Professional/CLionProjects/homework4/AdminGateway.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/AdminGateway.cpp.obj"
   "C:/Users/Professional/CLionProjects/homework4/Car.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/Car.cpp.obj"
   "C:/Users/Professional/CLionProjects/homework4/Driver.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/Driver.cpp.obj"
   "C:/Users/Professional/CLionProjects/homework4/DriverGateway.cpp" "C:/Users/Professional/CLionProjects/homework4/cmake-build-debug/CMakeFiles/homework4.dir/DriverGateway.cpp.obj"

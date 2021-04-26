@@ -69,7 +69,27 @@ Driver DriverGateway::login(const string & name, int securityPin) {
 }
 
 
-
+void DriverGateway::seeCars(Driver driver) {
+    driver = Driver::toInstance(Gateway::findDriver(driver.id)); //updating information from database
+    if(driver.carIds.empty()) {
+        cout << "You have no cars yet" << endl;
+        return;
+    }
+    cout << "You have " + to_string(driver.carIds.size()) + " addresses:" << endl;
+    for(int i = 0; i < driver.carIds.size(); i++){
+        json car = Gateway::findCar(driver.carIds[i]);
+        cout << car.at("number") << " - " << car.at("model") //todo fix
+             << " , color = " << car.at("color")
+             << " , type = " << car.at("carType")
+             << " , water left = " << car.at("freeBottleOfWater")
+             << " , coordinates =" << car.at("x") << ":" << car.at("y");
+        if(car.at("is_validated")){
+            cout << " - validated";
+        } else {
+            cout << " - not validated";
+        }
+        cout << endl;
+    }}
 //void DriverGateway::getOrder(Driver driver, Order order) {
 //    if (order.is_finished) {
 //        driver.ordersIds.push_back(order.id);

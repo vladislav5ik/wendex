@@ -22,7 +22,7 @@ json Driver::toJson(Driver driver) {
     json jsonDriver = {
             {"id", driver.id},
             {"name", driver.name},
-            {"sucurityPin" , driver.securityPin},
+            {"securityPin" , driver.securityPin},
             {"rating" , driver.rating},
             {"status" , driver.status},
             {"ordersIds" , orders},
@@ -34,7 +34,7 @@ json Driver::toJson(Driver driver) {
 Driver Driver::toInstance(json jsonDriver) {
     Driver driver = Driver(jsonDriver.at("id"),
                            jsonDriver.at("carIds"),
-                           jsonDriver.at("sucurityPin"),
+                           jsonDriver.at("securityPin"),
                            jsonDriver.at("rating"),
                            jsonDriver.at("status"),
                            jsonDriver.at("name"),
