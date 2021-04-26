@@ -90,11 +90,30 @@ void DriverGateway::seeCars(Driver driver) {
         }
         cout << endl;
     }}
-//void DriverGateway::getOrder(Driver driver, Order order) {
-//    if (order.is_finished) {
-//        driver.ordersIds.push_back(order.id);
-//        cout << "Thank you for choosing WEndex taxi! Pleas leave feedback." << endl;
-//        driver.rating = (getRandomNumber(1, 5) + driver.rating) / driver.ordersIds.size();
-//        saveAll();
-//    }
-//}
+
+void DriverGateway::getOrder(Driver driver) {
+    for(int i = 0; i < Gateway::getOrdersCount(); i++){
+        json jsonOrder = Gateway::findOrder(i);
+        if (jsonOrder.at("isFinished")){
+            continue;
+        }
+        for(int carId : driver.carIds){
+            if (!Gateway::findCar(carId).at("is_validated")
+             || jsonOrder.at("carType") != Gateway::findCar(carId).at("carType")){
+                continue;
+            }
+            cout << "Order found. From " << Gateway::findAddress(jsonOrder.at("fromId")).at("title") <<
+            " to " << Gateway::findAddress(jsonOrder.at("toId")).at("title") << endl;
+            cout << "Press Y to take or anything else to discard" << endl;
+            string ans; cin >> ans;
+            if (ans == "Y"){
+                Gateway::computeOrder(jsonOrder,Car::toInstance(Gateway::findCar(carId)), driver);
+                driver.ordersIds.push_back(jsonOrder.at("id"));
+                jsonOrder.at("driverId") = driver.id;
+                Gateway::updateOrder(jsonOrder);
+                Gateway::notifyPassenger(jsonOrder);
+                updateDriver(Driver::toJson(driver));
+            }
+        }
+    }
+}

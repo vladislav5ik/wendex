@@ -93,6 +93,8 @@ protected:
         static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
         return static_cast<int>(rand() * fraction * (max - min + 1) + min);
     }
+    static void computeOrder(json& jsonOrder, const Car& car, const Driver& driver);
+    static void notifyPassenger(json& jsonOrder);
 };
 
 

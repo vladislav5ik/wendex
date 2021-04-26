@@ -18,8 +18,8 @@ public:
     static void linkCar(Driver& driver, Car& car);
     static void getOrderHistory(Driver driver);
     static void setStatus(Driver driver, string status);
-    //void getOrder(Driver driver, Order order);
     static void seeCars(Driver driver);
+    static void getOrder(Driver driver);
 };
 
 

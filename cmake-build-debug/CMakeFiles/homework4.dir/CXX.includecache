@@ -18,14 +18,6 @@ C:/Users/Professional/CLionProjects/homework4/string
 json.hpp
 C:/Users/Professional/CLionProjects/homework4/json.hpp
 
-C:/Users/Professional/CLionProjects/homework4/AdminGateway.h
-Admin.h
-C:/Users/Professional/CLionProjects/homework4/Admin.h
-Gateway.h
-C:/Users/Professional/CLionProjects/homework4/Gateway.h
-PassengerGateway.h
-C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
-
 C:/Users/Professional/CLionProjects/homework4/Car.h
 utility
 -
@@ -42,15 +34,13 @@ C:/Users/Professional/CLionProjects/homework4/vector
 json.hpp
 C:/Users/Professional/CLionProjects/homework4/json.hpp
 
-C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
+C:/Users/Professional/CLionProjects/homework4/Gateway.cpp
 Gateway.h
 C:/Users/Professional/CLionProjects/homework4/Gateway.h
-Address.h
-C:/Users/Professional/CLionProjects/homework4/Address.h
-Order.h
-C:/Users/Professional/CLionProjects/homework4/Order.h
-Driver.h
-C:/Users/Professional/CLionProjects/homework4/Driver.h
+iomanip
+-
+cmath
+C:/Users/Professional/CLionProjects/homework4/cmath
 
 C:/Users/Professional/CLionProjects/homework4/Gateway.h
 utility
@@ -87,18 +77,6 @@ vector
 C:/Users/Professional/CLionProjects/homework4/vector
 json.hpp
 C:/Users/Professional/CLionProjects/homework4/json.hpp
-
-C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
-Gateway.h
-C:/Users/Professional/CLionProjects/homework4/Gateway.h
-Address.h
-C:/Users/Professional/CLionProjects/homework4/Address.h
-Order.h
-C:/Users/Professional/CLionProjects/homework4/Order.h
-Passenger.h
-C:/Users/Professional/CLionProjects/homework4/Passenger.h
-vector
-C:/Users/Professional/CLionProjects/homework4/vector
 
 C:/Users/Professional/CLionProjects/homework4/json.hpp
 algorithm
@@ -423,14 +401,4 @@ utility
 -
 vector
 -
-
-C:/Users/Professional/CLionProjects/homework4/main.cpp
-Gateway.h
-C:/Users/Professional/CLionProjects/homework4/Gateway.h
-PassengerGateway.h
-C:/Users/Professional/CLionProjects/homework4/PassengerGateway.h
-DriverGateway.h
-C:/Users/Professional/CLionProjects/homework4/DriverGateway.h
-AdminGateway.h
-C:/Users/Professional/CLionProjects/homework4/AdminGateway.h
 

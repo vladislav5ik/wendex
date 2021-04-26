@@ -4,6 +4,7 @@
 
 #include "Gateway.h"
 #include <iomanip>
+#include "cmath"
 using namespace std;
 
 string Gateway::fileNameAddresses = "addresses.json",
@@ -235,3 +236,58 @@ void Gateway::reset() {
     saveCars();
 }
 
+void Gateway::computeOrder(json &jsonOrder, const Car &car, const Driver &driver) {
+    json jsonFrom = Gateway::findAddress(jsonOrder.at("fromId"));
+    json jsonTo = Gateway::findAddress(jsonOrder.at("toId"));
+
+    int multiplier;
+    if(car.carType == "Economy"){
+        multiplier = 1;
+    } else if (car.carType == "Comfort"){
+        multiplier = 5;
+    } else if (car.carType == "ComfortPlus") {
+        multiplier = 8;
+    } else if (car.carType == "Business"){
+        multiplier = 10;
+    } else {
+        multiplier = 1;
+    }
+    double distance = sqrt(pow((car.x - (double)jsonFrom.at("x")),2) +
+            pow((car.y - (double)jsonFrom.at("y")),2));
+
+    int time = distance * 120 + getRandomNumber(1,10);
+    double cost = distance * multiplier;
+
+    jsonOrder.at("distance") = distance;
+    jsonOrder.at("timeSeconds") = time;
+    jsonOrder.at("cost") = cost;
+    cout << "Order confirmed." << endl
+    << "distance = " << distance << ", time = " << time << ", cost = " << cost << endl;
+}
+
+void Gateway::notifyPassenger(json& jsonOrder) {
+    cout<< "[ notification for " << Gateway::findPassenger(jsonOrder.at("passengerId")).at("name") << "]"
+    << "Order id" << jsonOrder.at("id")
+    << " from " << Gateway::findAddress(jsonOrder.at("fromId")).at("title")
+    << " to " << Gateway::findAddress(jsonOrder.at("toId")).at("title")
+    << " has been competed.";
+
+    string method = Gateway::findPassenger(jsonOrder.at("passengerId")).at("defaultPaymentMethod");
+    if (method != ""){
+        cout << "You pay using " << method;
+    } else {
+        cout << "You not specified payment method. Please pay with cash";
+    }
+    cout << " " << jsonOrder.at("cost") << "." << endl;
+    jsonOrder.at("isFinished") = true;
+    updateOrder(jsonOrder);
+
+    int rate;
+    cout << "Please rate this order from 1 to 5:" << endl;
+    cin >> rate;
+    if (rate > 5 || rate <1) rate = 5;
+    cout << "Thank you!" << endl;
+    json jsonDriver = Gateway::findDriver(jsonOrder.at("driverId"));
+    jsonDriver.at("rating") = ((double)jsonDriver.at("rating") + rate)/((int)jsonDriver.at("ordersIds").size());
+    updateDriver(jsonDriver);
+}

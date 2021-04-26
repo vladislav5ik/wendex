@@ -68,11 +68,11 @@ void PassengerGateway::getOrderHistory(Passenger passenger) {
         return;
     }
     cout << "You have " + to_string(passenger.ordersIds.size()) + " orders:" << endl;
-    for(int i = 0; i < passenger.ordersIds.size(); i++){
-        json order = Gateway::findOrder(passenger.ordersIds[i]);
-        cout << "id" << passenger.ordersIds[i] << " - " << order.at("carType")
-            << " from " << Gateway::findAddress(order.at("fromId")).at("title")
-            << " from " << Gateway::findAddress(order.at("toId")).at("title");
+    for(int orderId : passenger.ordersIds){
+        json order = Gateway::findOrder(orderId);
+        cout << "id" << orderId << " - " << order.at("carType")
+             << " from " << Gateway::findAddress(order.at("fromId")).at("title")
+             << " to " << Gateway::findAddress(order.at("toId")).at("title");
         if(order.at("isFinished")){
             cout << " - finished";
         } else {
@@ -119,7 +119,7 @@ void PassengerGateway::getPinnedAddresses(Passenger passenger) {
 Order PassengerGateway::addOrder(Passenger passenger, Address from, Address to, string carType) {
     passenger = Passenger::toInstance(Gateway::findPassenger(passenger.id));
     if(from.id == -1) {
-        linkAddress(passenger, from); //after that id will update
+        linkAddress(passenger, from); //after linking addressId will update
     }
     if(to.id == -1) {
         linkAddress(passenger, to);
@@ -129,45 +129,6 @@ Order PassengerGateway::addOrder(Passenger passenger, Address from, Address to, 
     Gateway::addOrder(order);
     passenger.ordersIds.push_back(order.id);
     Gateway::updatePassenger(Passenger::toJson(passenger));
-    //for (int i = 0; i < Gateway::getDriversCount(); i++){
-    //    json driver = Gateway::findDriver(i);
-    //    if(Gateway::findCar(driver["carId"])["carType"] != carType ||
-    //        driver["status"] == "in ride"){
-    //        break;
-    //    } else {
-    //        int multiplier;
-    //        if(carType == "Economy"){
-    //            multiplier = 1;
-    //        } else if (carType == "Comfort"){
-    //            multiplier = 5;
-    //        } else if (carType == "ComfortPlus") {
-    //            multiplier = 8;
-    //        } else if (carType == "Business"){
-    //            multiplier = 10;
-    //        } else {
-    //            multiplier = 1;
-    //        }
-    //        double distance = getRandomNumber(5,100);
-    //        int time = distance * 30;
-    //        double cost = distance * multiplier;
-    //        cout << "Please confirm the order: (Y/N)" << endl
-    //            << "time = " << time << ", cost = " << cost << endl;
-    //        string confirmation;
-    //        cin >> confirmation;
-    //        if (confirmation == "Y") {
-    //            json car = Gateway::findCar(driver["carId"]);
-    //            cout << "Car " << car["color"] << " " << car["model"] << ", number" << car["number"];
-    //            Order order = Order(false, -1, from.id, to.id, driver["id"],
-    //                                passenger.id, driver["carId"], time, distance, cost);
-    //            Gateway::addOrder(order);
-    //            passenger.ordersIds.push_back(order.id);
-    //            passenger.rating =(getRandomNumber(1,5) + passenger.rating) / passenger.ordersIds.size();
-    //            saveAll();
     cout<< "You have ordered " << order.carType << " car from " << from.title << " to " << to.title << "." << endl;
-                return order;
-    //        }
-    //    }
-    //}
-    //cout << "Sorry, there are no free drivers now.";
-    //return Order(false,-1,-1,-1,-1,-1,-1,-1,-1,-1);
+    return order;
 }

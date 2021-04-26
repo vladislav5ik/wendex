@@ -56,5 +56,6 @@ int main() {
     AdminGateway::validateCar(adm, car);
 
     DriverGateway::seeCars(d1);
+    DriverGateway::getOrder(d1);
     return 0;
 }
