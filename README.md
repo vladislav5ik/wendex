@@ -12,6 +12,8 @@ The program uses a [json](https://github.com/nlohmann/json#stl-like-access) libr
 
 
 ### How to start using?
+Before you start, absolutely all data in the program is saved after each command executed. This means that the program can be turned off or used on other devices and no data is lost.
+
 - There are three gates in the program: for `passengers` ,`drivers` and `admins`. Further work will be conducted with them.
 - Register your first users. Bind the addresses and cars to them like in example below. 
 - Use a `security pin` to protect accounts
@@ -33,8 +35,6 @@ Car car("M563OP77","RED","WENDEX SELF-DRIVING","business",5.39,55.9);
 DriverGateway::linkCar(d1,car);
 ```
 ### Detailed guide
-Before you start, absolutely all data in the program is saved after each command executed. This means that the program can be turned off or used on other devices and no data is lost.
-
 Let's take a look at the primary methods.
 #### Account info
 
